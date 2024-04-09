@@ -40,9 +40,7 @@ func requestHandler(ctx *fasthttp.RequestCtx) {
 		fmt.Println("something wrong!")
 	}
 	fmt.Fprintf(ctx, "Raw request is:\n---CUT---\n%s\n---CUT---", &ctx.Request)
-
 	ctx.SetContentType("text/plain; charset=utf8")
-
 	// Set arbitrary headers
 	ctx.Response.Header.SetStatusCode(200)
 	ctx.Response.Header.Set("X-My-Header", "my-header-value")
